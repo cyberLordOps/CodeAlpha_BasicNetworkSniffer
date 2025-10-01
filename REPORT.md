@@ -1,5 +1,5 @@
 1. Title & Introduction
-Title: Network Packet Sniffer using Python (Task 1)
+Title: Network Packet Sniffer using Python
 Introduction:
 This project implements a basic network sniffer in Python using the Scapy library. The program captures network packets in real-time, extracts essential details such as source and destination IP addresses, protocol types, and payloads, and displays them in a readable format.
 The goal of this task is to introduce fundamental concepts of computer networking, particularly how data flows across a network and how packet sniffing tools work. By analyzing raw packets, we gain insights into the structure of TCP/IP protocols, communication between clients and servers, and the visibility (or encryption) of transmitted data.
@@ -7,21 +7,21 @@ This documentation provides an overview of the objectives, methodology, implemen
 
 2. Objectives
 The objectives of this task are as follows:
-Build a Python program to capture network traffic packets.
-Analyze captured packets to understand their structure and content.
-Learn how data flows through the network and the basics of protocols (TCP, UDP, DNS, HTTP).
-Use libraries like Scapy or Socket for packet capturing.
-Display useful information such as source/destination IPs, protocols, and payloads.
+2.1. Build a Python program to capture network traffic packets.
+2.2. Analyze captured packets to understand their structure and content.
+2.3. Learn how data flows through the network and the basics of protocols (TCP, UDP, DNS, HTTP).
+2.4. Use libraries like Scapy or Socket for packet capturing.
+2.5. Display useful information such as source/destination IPs, protocols, and payloads.
 All objectives were successfully achieved through the implementation of the sniffer and subsequent packet analysis.
 
-3. Tools & Environment
-Programming Language: Python 3.10
-Library Used: Scapy 2.5.x
-Operating System: Windows 10 (also works on Linux/Kali)
+4. Tools & Environment
+Programming Language: Python 3.13.17
+Library Used: Scapy 2.5.
+Operating System: Windows 11 (also works on Linux/Kali)
 Network Interface: Wi-Fi adapter for live traffic monitoring
 Privileges: Administrator/root permissions required for raw packet sniffing
 
-4. Methodology
+5. Methodology
 The project followed a structured approach:
 Step 1: Setup
 Installed Python and Scapy (pip install scapy).
@@ -37,7 +37,7 @@ Added decoding for DNS queries to display domain lookups.
 Extracted HTTP GET requests when available.
 Displayed raw payloads where decoding was not possible.
 
-5. Implementation (Code Snippet)
+6. Implementation (Code Snippet)
 from scapy.all import sniff, IP, TCP, UDP, DNS, Raw
 
 def packet_callback(pkt):
