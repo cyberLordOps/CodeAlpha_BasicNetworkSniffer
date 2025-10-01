@@ -70,7 +70,7 @@ def packet_callback(pkt):
 
         print(f"📦 {src} -> {dst} | Proto: {proto} | Payload: {payload}")
 
-##### Start sniffing (CTRL + C to stop)
+###### Start sniffing (CTRL + C to stop)
 sniff(prn=packet_callback, store=False)
 This program runs continuously and prints information for every captured packet.
 
@@ -91,7 +91,7 @@ This output shows communication between the local system and multiple remote ser
 
 ### Analysis & Findings
 From the captured packets, several observations were made:
-###### TCP is dominant: 
+##### TCP is dominant: 
 Most web traffic operates over TCP for reliability.
 ##### UDP is used for fast services: 
 Protocols like DNS use UDP for quick, connectionless communication.
