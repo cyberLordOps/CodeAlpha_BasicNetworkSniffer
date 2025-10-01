@@ -77,8 +77,7 @@ Running requires admin/root privileges on most systems.
 
 📂 Documentation
 
-For detailed explanations (TCP/UDP breakdowns, DNS, HTTPS limitations, findings), see:
-👉 REPORT.md
+For detailed explanations (TCP/UDP breakdowns, DNS, HTTPS limitations, findings), see 👉 [Report] (REPORT.md) 
 
 
 ---
