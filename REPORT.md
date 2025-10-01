@@ -7,6 +7,8 @@ This project implements a basic network sniffer in Python using the Scapy librar
 The goal of this task is to introduce fundamental concepts of computer networking, particularly how data flows across a network and how packet sniffing tools work. By analyzing raw packets, we gain insights into the structure of TCP/IP protocols, communication between clients and servers, and the visibility (or encryption) of transmitted data.
 This documentation provides an overview of the objectives, methodology, implementation, and findings from building and testing the packet sniffer.
 
+---
+
 Objectives
 The objectives of this task are as follows:
 1. Build a Python program to capture network traffic packets.
@@ -16,12 +18,16 @@ The objectives of this task are as follows:
 5. Display useful information such as source/destination IPs, protocols, and payloads.
 All objectives were successfully achieved through the implementation of the sniffer and subsequent packet analysis.
 
+---
+
 Tools & Environment
 Programming Language: Python 3.13.17
 Library Used: Scapy 2.5
 Operating System: Windows 11 (also works on Linux/Kali)
 Network Interface: Wi-Fi adapter for live traffic monitoring
 Privileges: Administrator/root permissions required for raw packet sniffing
+
+---
 
 Methodology
 The project followed a structured approach:
@@ -38,6 +44,8 @@ Step 4: Protocol-Specific Parsing
 Added decoding for DNS queries to display domain lookups.
 Extracted HTTP GET requests when available.
 Displayed raw payloads where decoding was not possible.
+
+---
 
 Implementation (Code Snippet)
 from scapy.all import sniff, IP, TCP, UDP, DNS, Raw
@@ -66,6 +74,8 @@ def packet_callback(pkt):
 sniff(prn=packet_callback, store=False)
 This program runs continuously and prints information for every captured packet.
 
+---
+
 Sample Output
 Below is a snippet of real captured traffic:
 📦 192.168.32.169 -> 196.49.32.6 | Proto: TCP | Payload: b'GET /pr/5030841d-c919...'
@@ -77,6 +87,8 @@ Below is a snippet of real captured traffic:
 📦 192.168.32.169 -> 13.89.179.10 | Proto: TCP | Payload: N/A
 This output shows communication between the local system and multiple remote servers, involving different protocols and payload types.
 
+---
+
 Analysis & Findings
 From the captured packets, several observations were made:
 TCP is dominant: Most web traffic operates over TCP for reliability.
@@ -86,11 +98,15 @@ HTTP requests are visible: For non-HTTPS connections, parts of HTTP requests (e.
 HTTPS encrypts payloads: Most modern traffic is HTTPS, making the payload unreadable.
 Two-way communication: Packets show clear client → server and server → client flows.
 
+---
+
 Challenges Faced
 Encrypted Traffic: Most web applications use HTTPS, so payloads were not fully readable.
 Raw Payload Handling: Non-printable characters sometimes caused decoding issues.
 Permissions: Root/administrator access was required to run the sniffer.
 Traffic Noise: Large volumes of packets made it challenging to focus on specific flows without filters.
+
+---
 
 Conclusion
 This task successfully met all objectives. A working Python packet sniffer was developed using Scapy, capable of capturing live network traffic, extracting useful details, and presenting them in a readable format.
@@ -99,6 +115,8 @@ Network packet structures (IP, TCP, UDP, DNS, HTTP).
 The flow of data between local devices and external servers.
 The limitations of packet sniffing due to encryption.
 This foundational knowledge provides a strong base for advanced tasks, such as packet filtering, logging, intrusion detection, or protocol-specific analysis.
+
+---
 
 References
 Scapy Documentation: https://scapy.net
